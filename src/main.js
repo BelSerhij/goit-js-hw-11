@@ -1,5 +1,5 @@
 
-import { getImagesByQuery } from './js/pixabay.js'; 
+import { getImagesByQuery } from './js/pixabay-api.js'; 
 import { renderImages } from './js/render-functions.js'; 
 
 import iziToast from "izitoast";
