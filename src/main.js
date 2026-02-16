@@ -1,6 +1,6 @@
 
-import { getImagesByQuery } from './pixabay.js'; 
-import { renderImages } from './render-functions.js'; 
+import { getImagesByQuery } from './js/pixabay.js'; 
+import { renderImages } from './js/render-functions.js'; 
 
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
