@@ -1,19 +1,38 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
-export function renderImages(images) {
-    const gallery = document.querySelector(".gallery");
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+});
+
+export function renderImages(images, container) {
     const markup = images.map(image => `
-        <div class="photo-card">
-            <a href="${image.largeImageURL}" class="lightbox">
-                <img src="${image.webformatURL}" alt="${image.tags}" />
+        <li class="gallery-item">
+            <a class="gallery-link" href="${image.largeImageURL}">
+                <img class="gallery-image" src="${image.webformatURL}" alt="${image.tags}" />
             </a>
             <div class="info">
-                <p><b>Likes:</b> ${image.likes}</p>
-                <p><b>Views:</b> ${image.views}</p>
-                <p><b>Comments:</b> ${image.comments}</p>
-                <p><b>Downloads:</b> ${image.downloads}</p>
+                <p class="info-item"><b>Likes</b><span>${image.likes}</span></p>
+                <p class="info-item"><b>Views</b><span>${image.views}</span></p>
+                <p class="info-item"><b>Comments</b><span>${image.comments}</span></p>
+                <p class="info-item"><b>Downloads</b><span>${image.downloads}</span></p>
             </div>
-        </div>
+        </li>
     `).join("");
-    gallery.innerHTML = markup;
+
+    container.innerHTML = markup;
+    lightbox.refresh();
 }
 
+export function clearGallery(container) {
+    container.innerHTML = '';
+}
+
+export function showLoader(loaderElement) {
+    loaderElement.style.display = 'block';
+}
+
+export function hideLoader(loaderElement) {
+    loaderElement.style.display = 'none';
+}
