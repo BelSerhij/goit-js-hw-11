@@ -22,7 +22,7 @@ input:hover {
 input:focus {
     outline: none;
     border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);   
+    box-shadow: 0 0 5px #ff910080;   
 }
 
 button{
@@ -54,7 +54,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #595353;
     border-radius: 8px;
     overflow: hidden;
     background: #fff;
